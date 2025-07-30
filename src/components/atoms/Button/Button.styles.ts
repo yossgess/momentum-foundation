@@ -28,18 +28,20 @@ export const createButtonStyles = () => {
       backgroundColor: theme.colors.secondary.main,
     },
 
-    accent: {
-      backgroundColor: theme.colors.accent.main,
-    },
-
-    outline: {
-      backgroundColor: 'transparent',
-      borderWidth: 1,
-      borderColor: theme.colors.primary.main,
-    },
-
     ghost: {
       backgroundColor: 'transparent',
+    },
+
+    danger: {
+      backgroundColor: theme.colors.status.error,
+    },
+
+    iconButton: {
+      backgroundColor: 'transparent',
+      borderRadius: 50,
+      width: 48,
+      height: 48,
+      padding: 0,
     },
 
     small: {
@@ -85,16 +87,16 @@ export const createButtonStyles = () => {
       color: theme.colors.text.primary,
     },
 
-    textAccent: {
-      color: theme.colors.text.inverse,
-    },
-
-    textOutline: {
-      color: theme.colors.primary.main,
-    },
-
     textGhost: {
       color: theme.colors.primary.main,
+    },
+
+    textDanger: {
+      color: theme.colors.text.primary,
+    },
+
+    textIconButton: {
+      color: theme.colors.text.primary,
     },
 
     textSmall: {

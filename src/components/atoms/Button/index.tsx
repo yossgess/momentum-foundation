@@ -6,7 +6,7 @@ import { createButtonStyles } from './Button.styles';
 import { theme } from '../../../theme';
 
 export const Button: React.FC<ButtonProps> = ({
-  title,
+  label,
   onPress,
   variant = 'primary',
   size = 'medium',
@@ -31,8 +31,10 @@ export const Button: React.FC<ButtonProps> = ({
         return theme.gradients.primary;
       case 'secondary':
         return theme.gradients.secondary;
-      case 'accent':
-        return [theme.colors.accent.main, theme.colors.accent.dark];
+      case 'danger':
+        return [theme.colors.status.error, theme.colors.status.error];
+      case 'iconButton':
+        return ['transparent', 'transparent'];
       default:
         return ['transparent', 'transparent'];
     }
@@ -52,7 +54,7 @@ export const Button: React.FC<ButtonProps> = ({
         <View style={styles.loadingContainer}>
           <ActivityIndicator 
             size="small" 
-            color={variant === 'outline' || variant === 'ghost' ? theme.colors.primary.main : theme.colors.text.primary} 
+            color={variant === 'ghost' ? theme.colors.primary.main : theme.colors.text.primary} 
           />
           <Text style={[
             styles.text,
@@ -61,7 +63,7 @@ export const Button: React.FC<ButtonProps> = ({
             { marginLeft: theme.spacing[2] },
             textStyle,
           ]}>
-            {title}
+            {label}
           </Text>
         </View>
       ) : (
@@ -75,7 +77,7 @@ export const Button: React.FC<ButtonProps> = ({
             styles[`text${size.charAt(0).toUpperCase() + size.slice(1)}` as keyof typeof styles],
             textStyle,
           ]}>
-            {title}
+            {label}
           </Text>
           {icon && iconPosition === 'right' && (
             <View style={[styles.icon, styles.iconRight]}>{icon}</View>

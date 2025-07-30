@@ -1,5 +1,5 @@
 export * from './components';
 export * from './shared';
-export * from './theme';
+export { theme } from './theme';
 export * from './config';
 export * from './navigation';

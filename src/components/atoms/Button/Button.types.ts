@@ -1,10 +1,10 @@
 import { ViewStyle, TextStyle } from 'react-native';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'iconButton';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps {
-  title: string;
+  label?: string;
   onPress: () => void;
   variant?: ButtonVariant;
   size?: ButtonSize;
