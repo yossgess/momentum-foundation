@@ -9,4 +9,5 @@ export interface FilterButtonProps {
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   style?: ViewStyle;
+  locale?: 'en' | 'fr';
 }

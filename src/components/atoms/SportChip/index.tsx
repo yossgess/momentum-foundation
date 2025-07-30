@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { SportChipProps } from './SportChip.types';
 import { createSportChipStyles } from './SportChip.styles';
 import { theme } from '../../../theme';
+import { logger } from '../../../shared/utils/logger';
 
 export const SportChip: React.FC<SportChipProps> = ({
   sport,

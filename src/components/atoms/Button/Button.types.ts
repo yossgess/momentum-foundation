@@ -15,4 +15,5 @@ export interface ButtonProps {
   style?: ViewStyle;
   textStyle?: TextStyle;
   fullWidth?: boolean;
+  locale?: 'en' | 'fr';
 }

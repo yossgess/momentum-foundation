@@ -5,6 +5,7 @@ import { IconBadge } from '../IconBadge';
 import { ChatButtonProps } from './ChatButton.types';
 import { createChatButtonStyles } from './ChatButton.styles';
 import { theme } from '../../../theme';
+import { logger } from '../../../shared/utils/logger';
 
 export const ChatButton: React.FC<ChatButtonProps> = ({
   onPress,
@@ -16,9 +17,14 @@ export const ChatButton: React.FC<ChatButtonProps> = ({
 }) => {
   const styles = createChatButtonStyles();
 
+  const handlePress = () => {
+    logger.info('[ChatButton] Chat button pressed', { unreadCount });
+    onPress();
+  };
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       disabled={disabled}
       style={({ pressed }) => [
         styles.container,

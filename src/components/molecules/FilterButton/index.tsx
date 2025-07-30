@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { FilterButtonProps } from './FilterButton.types';
 import { createFilterButtonStyles } from './FilterButton.styles';
 import { theme } from '../../../theme';
+import { useTranslation } from '../../../shared/utils/translations';
+import { logger } from '../../../shared/utils/logger';
 
 export const FilterButton: React.FC<FilterButtonProps> = ({
   onPress,
@@ -14,8 +16,15 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
   size = 'medium',
   disabled = false,
   style,
+  locale = 'en',
 }) => {
   const styles = createFilterButtonStyles();
+  const { t } = useTranslation(locale);
+
+  const handlePress = () => {
+    logger.info('[FilterButton] Filter button pressed', { active, badgeCount, variant });
+    onPress();
+  };
 
   const getIconSize = () => {
     switch (size) {
@@ -49,7 +58,7 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
 
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       disabled={disabled}
       style={({ pressed }) => [
         ...containerStyle,
@@ -71,7 +80,7 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
           styles.text,
           active && styles.activeText,
         ]}>
-          {label}
+          {t.common.filter}
         </Text>
       )}
 

@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { SettingsButtonProps } from './SettingsButton.types';
 import { createSettingsButtonStyles } from './SettingsButton.styles';
 import { theme } from '../../../theme';
+import { logger } from '../../../shared/utils/logger';
 
 export const SettingsButton: React.FC<SettingsButtonProps> = ({
   onPress,
@@ -16,9 +17,14 @@ export const SettingsButton: React.FC<SettingsButtonProps> = ({
 }) => {
   const styles = createSettingsButtonStyles();
 
+  const handlePress = () => {
+    logger.info('[SettingsButton] Settings button pressed');
+    onPress();
+  };
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       disabled={disabled}
       style={({ pressed }) => [
         styles.container,

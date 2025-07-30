@@ -10,4 +10,5 @@ export interface SearchBarProps {
   inputStyle?: TextStyle;
   disabled?: boolean;
   autoFocus?: boolean;
+  locale?: 'en' | 'fr';
 }

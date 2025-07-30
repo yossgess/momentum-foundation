@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import { EditProfileButtonProps } from './EditProfileButton.types';
 import { createEditProfileButtonStyles } from './EditProfileButton.styles';
 import { theme } from '../../../theme';
+import { logger } from '../../../shared/utils/logger';
 
 export const EditProfileButton: React.FC<EditProfileButtonProps> = ({
   onPress,
@@ -16,10 +17,15 @@ export const EditProfileButton: React.FC<EditProfileButtonProps> = ({
 }) => {
   const styles = createEditProfileButtonStyles();
 
+  const handlePress = () => {
+    logger.info('[EditProfileButton] Edit profile button pressed', { variant });
+    onPress();
+  };
+
   if (variant === 'floating') {
     return (
       <Pressable
-        onPress={onPress}
+        onPress={handlePress}
         disabled={disabled}
         style={({ pressed }) => [
           styles.floating,
@@ -40,7 +46,7 @@ export const EditProfileButton: React.FC<EditProfileButtonProps> = ({
   return (
     <Button
       label={label}
-      onPress={onPress}
+      onPress={handlePress}
       variant={buttonVariant}
       icon="pencil"
       disabled={disabled}

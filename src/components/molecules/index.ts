@@ -16,3 +16,4 @@ export { FilterButton } from './FilterButton';
 export { EventCard } from './EventCard';
 export { CoachCard } from './CoachCard';
 export { CourtCard } from './CourtCard';
+export { ChallengeEye } from './ChallengeEye';

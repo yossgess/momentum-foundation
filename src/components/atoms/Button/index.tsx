@@ -4,6 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { ButtonProps } from './Button.types';
 import { createButtonStyles } from './Button.styles';
 import { theme } from '../../../theme';
+import { useTranslation } from '../../../shared/utils/translations';
+import { logger } from '../../../shared/utils/logger';
 
 export const Button: React.FC<ButtonProps> = ({
   label,
@@ -17,11 +19,14 @@ export const Button: React.FC<ButtonProps> = ({
   style,
   textStyle,
   fullWidth = false,
+  locale = 'en',
 }) => {
   const styles = createButtonStyles();
+  const { t } = useTranslation(locale);
 
   const handlePress = () => {
     if (disabled || loading) return;
+    logger.info(`[Button] ${variant} button pressed`, { label, variant });
     onPress();
   };
 

@@ -5,6 +5,7 @@ import { IconBadge } from '../IconBadge';
 import { NotificationButtonProps } from './NotificationButton.types';
 import { createNotificationButtonStyles } from './NotificationButton.styles';
 import { theme } from '../../../theme';
+import { logger } from '../../../shared/utils/logger';
 
 export const NotificationButton: React.FC<NotificationButtonProps> = ({
   onPress,
@@ -16,9 +17,14 @@ export const NotificationButton: React.FC<NotificationButtonProps> = ({
 }) => {
   const styles = createNotificationButtonStyles();
 
+  const handlePress = () => {
+    logger.info('[NotificationButton] Notification button pressed', { badgeCount });
+    onPress();
+  };
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       disabled={disabled}
       style={({ pressed }) => [
         styles.container,
