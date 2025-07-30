@@ -18,3 +18,5 @@ export { NotificationButton } from './NotificationButton';
 export { SettingsButton } from './SettingsButton';
 export { EditProfileButton } from './EditProfileButton';
 export { ChatButton } from './ChatButton';
+export { DistanceRangeSelector } from './DistanceRangeSelector';
+export { AgeRangeSelector } from './AgeRangeSelector';
