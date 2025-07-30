@@ -11,3 +11,5 @@ export { SportsGridSelector } from './SportsGridSelector';
 export { CommonSportsDisplay } from './CommonSportsDisplay';
 export { SportPreferencesSummary } from './SportPreferencesSummary';
 export { SportFilterChipsGroup } from './SportFilterChipsGroup';
+export { SearchBar } from './SearchBar';
+export { FilterButton } from './FilterButton';
