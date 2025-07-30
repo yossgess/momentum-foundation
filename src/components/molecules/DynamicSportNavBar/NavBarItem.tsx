@@ -85,31 +85,38 @@ export const NavBarItem: React.FC<NavBarItemProps> = ({
           styles.iconContainer,
           {
             transform: [{ scale: scaleAnim }],
-            shadowColor: theme.colors.primary.main,
-            shadowOpacity: glowAnim,
-            shadowRadius: 8,
-            shadowOffset: { width: 0, height: 0 },
-            elevation: isActive ? 8 : 0,
           },
         ]}
       >
-        <IconComponent
-          size={24}
-          color={iconColor}
-          active={isActive}
-        />
-        
-        {isActive && (
-          <Animated.View
-            style={[
-              styles.activeIndicator,
-              {
-                opacity: glowAnim,
-                backgroundColor: theme.colors.primary.main,
-              },
-            ]}
+        <Animated.View
+          style={[
+            {
+              shadowColor: theme.colors.primary.main,
+              shadowOpacity: glowAnim,
+              shadowRadius: 8,
+              shadowOffset: { width: 0, height: 0 },
+              elevation: isActive ? 8 : 0,
+            },
+          ]}
+        >
+          <IconComponent
+            size={24}
+            color={iconColor}
+            active={isActive}
           />
-        )}
+          
+          {isActive && (
+            <Animated.View
+              style={[
+                styles.activeIndicator,
+                {
+                  opacity: glowAnim,
+                  backgroundColor: theme.colors.primary.main,
+                },
+              ]}
+            />
+          )}
+        </Animated.View>
       </Animated.View>
 
       <Text style={[styles.label, { color: textColor }]}>
