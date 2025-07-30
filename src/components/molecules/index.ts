@@ -13,3 +13,6 @@ export { SportPreferencesSummary } from './SportPreferencesSummary';
 export { SportFilterChipsGroup } from './SportFilterChipsGroup';
 export { SearchBar } from './SearchBar';
 export { FilterButton } from './FilterButton';
+export { EventCard } from './EventCard';
+export { CoachCard } from './CoachCard';
+export { CourtCard } from './CourtCard';

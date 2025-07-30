@@ -7,6 +7,21 @@ export interface TranslationKeys {
     years: string;
     yearsShort: string;
   };
+  cards: {
+    event: {
+      participants: string;
+    };
+    coach: {
+      rating: string;
+      specialty: string;
+    };
+    court: {
+      indoor: string;
+      outdoor: string;
+      synthetic: string;
+      natural: string;
+    };
+  };
 }
 
 export const translations: Record<'en' | 'fr', TranslationKeys> = {
@@ -19,6 +34,21 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
       years: 'years',
       yearsShort: 'yrs',
     },
+    cards: {
+      event: {
+        participants: 'participants',
+      },
+      coach: {
+        rating: 'Rating',
+        specialty: 'Specialty',
+      },
+      court: {
+        indoor: 'Indoor',
+        outdoor: 'Outdoor',
+        synthetic: 'Synthetic',
+        natural: 'Natural',
+      },
+    },
   },
   fr: {
     distance: {
@@ -28,6 +58,21 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
     age: {
       years: 'ans',
       yearsShort: 'ans',
+    },
+    cards: {
+      event: {
+        participants: 'participants',
+      },
+      coach: {
+        rating: 'Note',
+        specialty: 'Spécialité',
+      },
+      court: {
+        indoor: 'Intérieur',
+        outdoor: 'Extérieur',
+        synthetic: 'Synthétique',
+        natural: 'Naturel',
+      },
     },
   },
 };
