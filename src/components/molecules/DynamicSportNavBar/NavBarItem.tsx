@@ -20,33 +20,31 @@ export const NavBarItem: React.FC<NavBarItemProps> = ({
 
   React.useEffect(() => {
     if (isActive) {
-      Animated.parallel([
-        Animated.spring(scaleAnim, {
-          toValue: 1.1,
-          useNativeDriver: true,
-          tension: 150,
-          friction: 8,
-        }),
-        Animated.timing(glowAnim, {
-          toValue: 1,
-          duration: 300,
-          useNativeDriver: false,
-        }),
-      ]).start();
+      Animated.spring(scaleAnim, {
+        toValue: 1.1,
+        useNativeDriver: true,
+        tension: 150,
+        friction: 8,
+      }).start();
+      
+      Animated.timing(glowAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: false,
+      }).start();
     } else {
-      Animated.parallel([
-        Animated.spring(scaleAnim, {
-          toValue: 1,
-          useNativeDriver: true,
-          tension: 150,
-          friction: 8,
-        }),
-        Animated.timing(glowAnim, {
-          toValue: 0,
-          duration: 200,
-          useNativeDriver: false,
-        }),
-      ]).start();
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        useNativeDriver: true,
+        tension: 150,
+        friction: 8,
+      }).start();
+      
+      Animated.timing(glowAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: false,
+      }).start();
     }
   }, [isActive, scaleAnim, glowAnim]);
 
