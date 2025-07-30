@@ -2,10 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MainTabParamList } from '../shared/types/navigation';
 import { useAuth } from '../shared/hooks/useAuth';
+import { DiscoverScreen } from '../features/discovery/screens';
 import { DynamicSportNavBar } from '../components/molecules/DynamicSportNavBar';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-const DiscoverScreen = () => null;
 const EventsScreen = () => null;
 const ChatsScreen = () => null;
 const ProfileScreen = () => null;

@@ -129,6 +129,14 @@ export interface TranslationKeys {
     notifications: string;
     editProfile: string;
   };
+  discovery: {
+    title: string;
+    noMoreProfiles: string;
+    checkBackLater: string;
+    sendMessage: string;
+    continueSwiping: string;
+    matchFound: string;
+  };
 }
 
 export const translations: Record<'en' | 'fr', TranslationKeys> = {
@@ -263,6 +271,14 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
       notifications: 'Notifications',
       editProfile: 'Edit Profile',
     },
+    discovery: {
+      title: 'Discovery',
+      noMoreProfiles: 'No more profiles',
+      checkBackLater: 'Check back later for new matches!',
+      sendMessage: 'Send Message',
+      continueSwiping: 'Continue Swiping',
+      matchFound: 'It\'s a Match!',
+    },
   },
   fr: {
     distance: {
@@ -394,6 +410,14 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
       settings: 'Paramètres',
       notifications: 'Notifications',
       editProfile: 'Modifier le Profil',
+    },
+    discovery: {
+      title: 'Découverte',
+      noMoreProfiles: 'Plus de profils',
+      checkBackLater: 'Revenez plus tard pour de nouveaux matchs!',
+      sendMessage: 'Envoyer un Message',
+      continueSwiping: 'Continuer à Swiper',
+      matchFound: 'C\'est un Match!',
     },
   },
 };
