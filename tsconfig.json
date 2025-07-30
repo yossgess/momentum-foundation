@@ -5,34 +5,57 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
-    "lib": ["es2017"],
-    "moduleResolution": "node",
+    "lib": [
+      "es2017"
+    ],
+    "moduleResolution": "bundler",
     "noEmit": true,
     "strict": true,
     "target": "esnext",
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/screens/*": ["./src/screens/*"],
-      "@/navigation/*": ["./src/navigation/*"],
-      "@/stores/*": ["./src/shared/stores/*"],
-      "@/services/*": ["./src/shared/services/*"],
-      "@/hooks/*": ["./src/shared/hooks/*"],
-      "@/types/*": ["./src/shared/types/*"],
-      "@/utils/*": ["./src/shared/utils/*"],
-      "@/theme/*": ["./src/theme/*"],
-      "@/config/*": ["./src/config/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/screens/*": [
+        "./src/screens/*"
+      ],
+      "@/navigation/*": [
+        "./src/navigation/*"
+      ],
+      "@/stores/*": [
+        "./src/shared/stores/*"
+      ],
+      "@/services/*": [
+        "./src/shared/services/*"
+      ],
+      "@/hooks/*": [
+        "./src/shared/hooks/*"
+      ],
+      "@/types/*": [
+        "./src/shared/types/*"
+      ],
+      "@/utils/*": [
+        "./src/shared/utils/*"
+      ],
+      "@/theme/*": [
+        "./src/theme/*"
+      ],
+      "@/config/*": [
+        "./src/config/*"
+      ]
     }
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }
