@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../shared/types/navigation';
 import { useAuth } from '../shared/hooks/useAuth';
+import PreviewScreen from '../dev/PreviewScreen';
 
 const AuthScreen = () => null;
 const ModeSelectionScreen = () => null;
@@ -23,6 +24,7 @@ const linking = {
   prefixes: ['momentum://', 'https://momentum.app'],
   config: {
     screens: {
+      Preview: 'preview',
       Main: 'main',
       UserProfile: 'user/:userId',
       EventDetails: 'event/:eventId',
@@ -45,7 +47,11 @@ export const AppNavigator: React.FC = () => {
 
   return (
     <NavigationContainer linking={linking}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator 
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Preview"
+      >
+        <Stack.Screen name="Preview" component={PreviewScreen} />
         {!isAuthenticated ? (
           <>
             <Stack.Screen name="Auth" component={AuthScreen} />
