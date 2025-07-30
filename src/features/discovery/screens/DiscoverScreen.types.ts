@@ -9,5 +9,6 @@ export interface ProfileData {
 }
 
 export interface DiscoverScreenProps {
+  navigation: any;
   locale?: 'en' | 'fr';
 }

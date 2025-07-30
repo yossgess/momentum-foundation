@@ -136,6 +136,8 @@ export interface TranslationKeys {
     sendMessage: string;
     continueSwiping: string;
     matchFound: string;
+    challengeAccepted: string;
+    revert: string;
   };
 }
 
@@ -278,6 +280,8 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
       sendMessage: 'Send Message',
       continueSwiping: 'Continue Swiping',
       matchFound: 'It\'s a Match!',
+      challengeAccepted: 'Challenge Accepted',
+      revert: 'Revert',
     },
   },
   fr: {
@@ -418,6 +422,8 @@ export const translations: Record<'en' | 'fr', TranslationKeys> = {
       sendMessage: 'Envoyer un Message',
       continueSwiping: 'Continuer à Swiper',
       matchFound: 'C\'est un Match!',
+      challengeAccepted: 'Défi Accepté',
+      revert: 'Annuler',
     },
   },
 };
