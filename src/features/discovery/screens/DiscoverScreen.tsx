@@ -141,12 +141,12 @@ export const DiscoverScreen: React.FC<DiscoverScreenProps> = ({ navigation }) =>
           </Typography>
           <NotificationButton 
             onPress={handleNotificationPress}
-            hasNotification={hasNewNotifications}
+            badgeCount={hasNewNotifications ? 1 : 0}
           />
         </View>
         
         <View style={styles.emptyState}>
-          <Typography variant="h3" style={styles.emptyTitle}>
+          <Typography variant="h2" style={styles.emptyTitle}>
             {t.discovery.noMoreProfiles}
           </Typography>
           <Typography variant="body" style={styles.emptyMessage}>
@@ -166,7 +166,7 @@ export const DiscoverScreen: React.FC<DiscoverScreenProps> = ({ navigation }) =>
         </Typography>
         <NotificationButton 
           onPress={handleNotificationPress}
-          hasNotification={hasNewNotifications}
+          badgeCount={hasNewNotifications ? 1 : 0}
         />
       </View>
 
@@ -190,7 +190,7 @@ export const DiscoverScreen: React.FC<DiscoverScreenProps> = ({ navigation }) =>
             <Typography variant="h2" style={styles.name}>
               {currentProfile.name}
             </Typography>
-            <Typography variant="h3" style={styles.age}>
+            <Typography variant="h2" style={styles.age}>
               {currentProfile.age}
             </Typography>
           </View>
