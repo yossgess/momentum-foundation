@@ -30,18 +30,18 @@ export const Button: React.FC<ButtonProps> = ({
     onPress();
   };
 
-  const getGradientColors = () => {
+  const getGradientColors = (): readonly [string, string] => {
     switch (variant) {
       case 'primary':
-        return theme.gradients.primary;
+        return theme.gradients.primary as readonly [string, string];
       case 'secondary':
-        return theme.gradients.secondary;
+        return theme.gradients.secondary as readonly [string, string];
       case 'danger':
-        return [theme.colors.status.error, theme.colors.status.error];
+        return [theme.colors.status.error, theme.colors.status.error] as const;
       case 'iconButton':
-        return ['transparent', 'transparent'];
+        return ['transparent', 'transparent'] as const;
       default:
-        return ['transparent', 'transparent'];
+        return ['transparent', 'transparent'] as const;
     }
   };
 
