@@ -9,3 +9,6 @@ export { SectionSelector } from './SectionSelector';
 export { PhotoSelector } from './PhotoSelector';
 export { Divider } from './Divider';
 export { Typography } from './Typography';
+export { Loader } from './Loader';
+export { Switch } from './Switch';
+export { Tag } from './Tag';
