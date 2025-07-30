@@ -3,136 +3,122 @@ import { theme } from '../../../theme';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
-export const createDiscoverScreenStyles = () =>
-  StyleSheet.create({
+export const createDiscoverScreenStyles = () => {
+  return StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: theme.colors.background.primary,
     },
-    topBar: {
+    header: {
       flexDirection: 'row',
-      alignItems: 'center',
       justifyContent: 'space-between',
+      alignItems: 'center',
       paddingHorizontal: theme.spacing[4],
-      paddingVertical: theme.spacing[3],
+      paddingVertical: theme.spacing[2],
       backgroundColor: theme.colors.background.primary,
       borderBottomWidth: 1,
       borderBottomColor: theme.colors.border.primary,
+      zIndex: 10,
     },
     title: {
-      fontSize: theme.typography.fontSizes.xl,
-      fontWeight: theme.typography.fontWeights.bold,
       color: theme.colors.text.primary,
-      textAlign: 'center',
+      fontWeight: '600',
     },
-    scrollContainer: {
+    profileCard: {
       flex: 1,
-    },
-    cardContainer: {
-      flex: 1,
+      backgroundColor: theme.colors.background.secondary,
       marginHorizontal: theme.spacing[4],
-      marginVertical: theme.spacing[2],
-      backgroundColor: theme.colors.surface.primary,
+      marginTop: theme.spacing[2],
+      marginBottom: 100,
       borderRadius: theme.spacing[4],
+      overflow: 'hidden',
       shadowColor: theme.colors.shadow.dark,
       shadowOffset: {
         width: 0,
         height: 8,
       },
-      shadowOpacity: 0.25,
+      shadowOpacity: 0.15,
       shadowRadius: 16,
-      elevation: 12,
-      overflow: 'hidden',
-      minHeight: screenHeight * 0.7,
+      elevation: 8,
     },
-    imageContainer: {
-      height: screenHeight * 0.5,
-      width: '100%',
-    },
-    carousel: {
-      flex: 1,
+    imageSection: {
+      height: '65%',
+      position: 'relative',
     },
     profileInfo: {
-      padding: theme.spacing[4],
       flex: 1,
-    },
-    nameRow: {
-      flexDirection: 'row',
+      padding: theme.spacing[4],
       justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: theme.spacing[3],
+    },
+    nameAgeRow: {
+      flexDirection: 'row',
+      alignItems: 'baseline',
+      marginBottom: theme.spacing[2],
     },
     name: {
-      fontSize: theme.typography.fontSizes.xl,
-      fontWeight: theme.typography.fontWeights.bold,
       color: theme.colors.text.primary,
+      fontWeight: '700',
+      marginRight: theme.spacing[2],
+      fontSize: 24,
+    },
+    age: {
+      color: theme.colors.text.secondary,
+      fontWeight: '500',
+      fontSize: 20,
+    },
+    distanceContainer: {
+      alignSelf: 'flex-start',
+      backgroundColor: theme.colors.background.tertiary,
+      paddingHorizontal: theme.spacing[3],
+      paddingVertical: theme.spacing[1],
+      borderRadius: theme.spacing[4],
+      marginBottom: theme.spacing[3],
     },
     distance: {
-      fontSize: theme.typography.fontSizes.sm,
-      fontWeight: theme.typography.fontWeights.medium,
       color: theme.colors.text.secondary,
-      backgroundColor: theme.colors.surface.secondary,
-      paddingHorizontal: theme.spacing[2],
-      paddingVertical: theme.spacing[1],
-      borderRadius: theme.spacing[2],
+      fontSize: 12,
+      fontWeight: '600',
     },
     sportsContainer: {
       flexDirection: 'row',
       flexWrap: 'wrap',
+      gap: theme.spacing[2],
       marginBottom: theme.spacing[3],
     },
-    sportChip: {
-      marginRight: theme.spacing[2],
-      marginBottom: theme.spacing[1],
-    },
     bio: {
-      fontSize: theme.typography.fontSizes.base,
-      lineHeight: theme.typography.lineHeights.relaxed,
       color: theme.colors.text.secondary,
-      marginTop: theme.spacing[2],
+      lineHeight: 20,
+      fontSize: 14,
     },
-    actionBar: {
-      backgroundColor: theme.colors.surface.primary,
+    actionButtons: {
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      paddingHorizontal: theme.spacing[6],
+      paddingVertical: theme.spacing[4],
+      backgroundColor: theme.colors.background.primary,
       borderTopWidth: 1,
       borderTopColor: theme.colors.border.primary,
-      paddingVertical: theme.spacing[3],
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
     },
-    buttonsContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      paddingHorizontal: theme.spacing[4],
-    },
-    actionButton: {
-      flex: 1,
-      marginHorizontal: theme.spacing[2],
-    },
-    revertButtonContainer: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    revertButton: {
-      width: 50,
-      height: 50,
-      borderRadius: 25,
-    },
-    emptyContainer: {
+    emptyState: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       paddingHorizontal: theme.spacing[6],
     },
     emptyTitle: {
-      fontSize: theme.typography.fontSizes.xl,
-      fontWeight: theme.typography.fontWeights.bold,
       color: theme.colors.text.primary,
-      textAlign: 'center',
       marginBottom: theme.spacing[2],
+      textAlign: 'center',
     },
-    emptySubtitle: {
-      fontSize: theme.typography.fontSizes.base,
+    emptyMessage: {
       color: theme.colors.text.secondary,
       textAlign: 'center',
-      lineHeight: theme.typography.lineHeights.relaxed,
+      lineHeight: 20,
     },
   });
+};
