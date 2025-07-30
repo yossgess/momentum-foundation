@@ -63,7 +63,7 @@ export const SwipeCard: React.FC<SwipeCardProps> = ({
         { translateY: translateY.value },
         { scale: scale.value },
         { rotate: `${rotation}deg` },
-      ],
+      ] as any,
     };
   });
 
