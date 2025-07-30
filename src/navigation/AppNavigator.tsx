@@ -4,11 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../shared/types/navigation';
 import { useAuth } from '../shared/hooks/useAuth';
 import PreviewScreen from '../dev/PreviewScreen';
+import { MainTabNavigator } from './MainTabNavigator';
 
 const AuthScreen = () => null;
 const ModeSelectionScreen = () => null;
 const OnboardingScreen = () => null;
-const MainTabNavigator = () => null;
 const UserProfileScreen = () => null;
 const EventDetailsScreen = () => null;
 const ChatViewScreen = () => null;
@@ -49,8 +49,9 @@ export const AppNavigator: React.FC = () => {
     <NavigationContainer linking={linking}>
       <Stack.Navigator 
         screenOptions={{ headerShown: false }}
-        initialRouteName="Preview"
+        initialRouteName="Main"
       >
+        <Stack.Screen name="Main" component={MainTabNavigator} />
         <Stack.Screen name="Preview" component={PreviewScreen} />
         {!isAuthenticated ? (
           <>
@@ -60,7 +61,6 @@ export const AppNavigator: React.FC = () => {
           </>
         ) : (
           <>
-            <Stack.Screen name="Main" component={MainTabNavigator} />
             <Stack.Screen
               name="UserProfile"
               component={UserProfileScreen}
